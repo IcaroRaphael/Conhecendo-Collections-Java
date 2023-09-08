@@ -20,12 +20,13 @@ public class ListaTarefa {
 
     public void removerTarefa(String descricao){
         if(!tarefas.isEmpty()){
+            List<Tarefa> tarefasRemovidas = new ArrayList<>();
             for(Tarefa t : tarefas){
                 if(t.getDescricao().equalsIgnoreCase(descricao)){
-                    tarefas.remove(t);
-                    break;
+                    tarefasRemovidas.add(t);
                 }
             }
+            tarefas.removeAll(tarefasRemovidas);
         } else{
             System.out.println("Lista vazia!");
         }
